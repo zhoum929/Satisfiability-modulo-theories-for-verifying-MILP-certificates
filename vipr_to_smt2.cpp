@@ -66,7 +66,7 @@ vector<string> Stringsplit(string str)
 	return toreturn;
 }
 
-
+//check if a number is real type
 bool is_real(string num){
 	int lnth=num.length();
 	bool ans=false;
@@ -87,6 +87,7 @@ string to_real2(string num){
 	
 	return num;
 }
+//transfer scientific notation
 string drop_Ep(string s){
 	if(s[0]=='(')return s;
 	int lnth=s.length();
@@ -152,6 +153,7 @@ void delete_assum(int i,string curs){
 		del_as[j].push_back(i);
 	}
 }
+//input DER section
 void input_DER(){
 	cout<<"DER"<<endl;
 	fin>>s;
@@ -347,7 +349,7 @@ void input_DER(){
 
 	
 }
-
+//input SOL section
 void input_SOL(){
 	cout<<"SOL"<<endl;
 	fin>>s;
@@ -427,6 +429,7 @@ void input_SOL(){
 
 
 }
+//input RTP section
 void input_RTP(){
 	cout<<"RTP"<<endl;
 	fin>>s;
@@ -443,6 +446,7 @@ void input_RTP(){
 		input_SOL();
 	}	
 }
+//input CON section
 void input_cons(){
 	fin>>cons_num>>bcons_num;
 	cout<<cons_num<<" "<<varnum<<" "<<bcons_num<<endl;
