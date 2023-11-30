@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <time.h>
 
 using namespace std;
 string filename;
@@ -489,10 +488,10 @@ void input_cons(){
 	input_RTP();
 }
 int main(){
-	clock_t start,end;
-	start=clock();
-	cout<<"Please type in the name of certificate file, without suffix: ";
-	filename="dcmulti";
+
+	cout<<"Please type in the name of certificate file, without extension: ";
+	cin>>filename;
+	cout<<endl;
 	string s1,s2;
 	s1=filename+".vipr";
 	s2=filename+"_vipr.smt2";
@@ -564,8 +563,6 @@ int main(){
 			fout<<"(check-sat)"<<endl;
 			fout<<"(exit)"<<endl;
 			fout.close();
-			end=clock();
-			cout<<(double)(end-start)/CLOCKS_PER_SEC;
 			return 0;
 		}
 	}
