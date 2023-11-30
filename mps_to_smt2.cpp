@@ -26,7 +26,7 @@ void input_rhs();
 void output_fun();
 void input_ranges();
 void input_indicators();
-//split a line of string into words (to me the most difficult part)
+//split a line of string into words
 vector<string> Stringsplit(string str)
 {
 	int start_pos=0;
@@ -118,6 +118,7 @@ string to_real2(string num){
 	
 	return num;
 }
+//transfer scientific notation
 string drop_Ep(string s){
 	if(s[0]=='(')return s;
 	int lnth=s.length();
