@@ -1,7 +1,9 @@
 # Satisfiability-modulo-theories-for-verifying-MILP-certificates
 This is the code for checking MILP results (certificates) with SMT solver
 
-The mps_to_smt2.cpp transforms a MILP problem in mps format into SMT problem in smt2 format. After compile it, run the executable, you can input the filename and the optimum bounds to be verified, and the corresponding smt2 file will be generated.
+The mps_to_smt2.cpp transforms a MILP problem in mps format with a bound of optimum value to be verified into SMT problem in smt2 format. After compile it, run the executable, you can input the filename and the optimum bounds to be verified, and the corresponding smt2 file will be generated.
+
+The mps_to_smt2_inf.cpp transforms a MILP problem in mps format into SMT problem in smt2 format. After compile it, run the executable, you can input the filename, and the corresponding smt2 file will be generated. Note that this transformation doesn't involve upper or lower bounds of the optimum value and can be used only to check feasibility.
 
 The vipr_to_smt2.cpp transforms a MILP problem certificate in vipr format into SMT problem in smt2 format. After compile it, run the executable, you can input the filename, and the corresponding smt2 file will be generated.
 
