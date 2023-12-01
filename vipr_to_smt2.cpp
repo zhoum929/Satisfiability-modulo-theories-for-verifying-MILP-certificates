@@ -456,7 +456,6 @@ void input_cons(){
 		coefficients.push_back(new_coe);
 		fin>>s;
 		cons_name.push_back(s);
-		cout<<s<<endl;
 		fin>>s;
 		if(s=="L")cons_type.push_back("-1.0");
 		if(s=="E")cons_type.push_back("0.0");
