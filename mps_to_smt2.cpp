@@ -626,7 +626,7 @@ void output_fun(){
 	return;
 }
 int main(){
-	cout<<"filename: ";
+	cout<<"filename without extension: ";
 	cin>>filename;
 	cout<<endl;
 	cout<<"optresult: ";
