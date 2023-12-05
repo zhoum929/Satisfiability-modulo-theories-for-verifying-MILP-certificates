@@ -488,7 +488,7 @@ void input_cons(){
 }
 int main(){
 
-	cout<<"Please type in the name of certificate file, without extension: ";
+	cout<<"filename without extension: ";
 	cin>>filename;
 	cout<<endl;
 	string s1,s2;
