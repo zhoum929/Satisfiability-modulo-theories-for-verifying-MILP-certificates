@@ -1,5 +1,10 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+#include <set>
+#include <fstream>
+#include <cmath>
 using namespace std;
 string filename;
 ofstream fout;
