@@ -11,14 +11,14 @@ ofstream fout;
 ifstream fin;
 string objsense;
 int varnum,intnum,cons_num,bcons_num,sol_num,der_num;
-vector<string>var,var_type;
+vector<string>var,var_type; 
 vector<string>obj;
 vector<string>cons_0;
-vector<string>cons_type,cons_rhs,cons_name;// -1.0 is <=,0.0 is =, 1.0 is >=, 2.0 is impossible
-vector<set<int>>sols;
-vector<string>sol_name;
-vector<string>der_name;
-vector<set<int>>assumps,coefficients;
+vector<string>cons_type,cons_rhs,cons_name;// cons_type is the type of a constraint: -1.0 is <=,0.0 is =, 1.0 is >=, 2.0 is impossible; cons_rhs and cons_name is the right hand side and name of a constraint
+vector<set<int>>sols;//each set contains the indices of variables with non-zero assignment in the corresponding solution
+vector<string>sol_name; //name of a solution as provided in vipr
+vector<string>der_name; //name of a derived constraint as provided in vipr
+vector<set<int>>assumps,coefficients;//
 set<int>objcoe,allasum;
 map<int,vector<int>>del_as;
 int domind=0;
@@ -496,7 +496,7 @@ int main(){
 	cout << "Please type the filename: " << endl;
 	cin >> filename;
 	int lnth=filename.length();
-	filename=filename.substr(0,lnth-4);
+	filename=filename.substr(0,lnth-5);
 	cout << endl;
 	string s1,s2;
 	s1=filename+".vipr";
