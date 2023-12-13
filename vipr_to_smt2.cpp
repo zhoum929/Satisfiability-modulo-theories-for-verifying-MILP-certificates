@@ -493,9 +493,11 @@ void input_cons(){
 }
 int main(){
 
-	cout<<"filename without extension: ";
-	cin>>filename;
-	cout<<endl;
+	cout << "Please type the filename: " << endl;
+	cin >> filename;
+	int lnth=filename.length();
+	filename=filename.substr(0,lnth-4);
+	cout << endl;
 	string s1,s2;
 	s1=filename+".vipr";
 	s2=filename+"_vipr.smt2";
