@@ -14,15 +14,15 @@ string objsense = "MIN";
 string optresult;
 int varnum = 0;
 bool hasN = false;
-const string namechange = "ZRTMRH";				  // to add at end of a name to make something now appeared before
-map<string, vector<pair<string, string>>> matrix; // row, variable, coefficient
-map<string, string> constraints;				  // row, constraint type
-map<string, pair<string, string>> variables;	  // variable, lower bound, upper bound
-map<string, string> variable_type;
-map<string, vector<pair<string, string>>> indicators; // row,var,num
-map<string, string> constraints_rhs;
-map<string, string> to_var_name;
-map<string, string> back_var_name;
+const string namechange = "ZRTMRH"; // to add at end of a name to make something now appeared before
+map<string, vector<pair<string, string>>> matrix; // constraint name, set of variables and corresponding coefficients in the left hand of the constraint
+map<string, string> constraints; // constraint name, constraint type ("E" for equality, "N" for objective, "L" for <=, "G" for >=)
+map<string, pair<string, string>> variables; // variable, lower bound of variable, upper bound of variable
+map<string, string> variable_type; //"Int" or "Real"
+map<string, vector<pair<string, string>>> indicators; // constraint name, pairs of variable and corresponding restraint value
+map<string, string> constraints_rhs; //right hand side of a constraint
+map<string, string> to_var_name; //variable names in mps and corresponding variable name in generated smt2 file
+map<string, string> back_var_name; //variable names in generated smt2 file and corresponding variable name in mps
 
 void input_rows();
 void input_columns();
