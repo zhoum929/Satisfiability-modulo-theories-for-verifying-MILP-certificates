@@ -11,16 +11,16 @@ ofstream fout;
 ifstream fin;
 string objsense;
 int varnum,intnum,cons_num,bcons_num,sol_num,der_num;
-vector<string>var,var_type; 
-vector<string>obj;
-vector<string>cons_0;
+vector<string>var,var_type; //name of a varialbe, type of a variable ("Int" or "Real")
+vector<string>obj; //coefficients of variables in objection function
+vector<string>cons_0; //length of the number of variables in the MILP system, every term is "0.0"
 vector<string>cons_type,cons_rhs,cons_name;// cons_type is the type of a constraint: -1.0 is <=,0.0 is =, 1.0 is >=, 2.0 is impossible; cons_rhs and cons_name is the right hand side and name of a constraint
 vector<set<int>>sols;//each set contains the indices of variables with non-zero assignment in the corresponding solution
 vector<string>sol_name; //name of a solution as provided in vipr
 vector<string>der_name; //name of a derived constraint as provided in vipr
-vector<set<int>>assumps,coefficients;//
-set<int>objcoe,allasum;
-map<int,vector<int>>del_as;
+vector<set<int>>assumps,coefficients;// assumps contains the set of indices of assumptions used to derive a constraint; coefficients contains indices of variables with non-zero coefficient in a constraint
+set<int>objcoe,allasum; //indices of variables with non-zero coefficients in objection function, and indices of assumptions stated in the DER section
+map<int,vector<int>>del_as;//indices of constraints that this constraint uses but no later constraints use
 int domind=0;
 
 string s;
