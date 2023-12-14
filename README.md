@@ -8,7 +8,7 @@ The `mps_to_smt2.cpp` transforms a **MILP** problem in *mps* format with a bound
 
 The generated *smt2* files can be checked with any **SMT** solvers, such as [cvc5](https://github.com/cvc5/cvc5) and [Z3](https://github.com/Z3Prover/z3)
 
-The authors checked the validity of these codes through the branchmark used in [vipr-experiements](https://github.com/ambros-gleixner/VIPR/tree/master/experiments)
+The authors checked the validity of these codes through the benchmarks used in [vipr-experiements](https://github.com/ambros-gleixner/VIPR/tree/master/experiments)
 
 If readers want to do test own problems, please refer to [SCIP-extension](https://github.com/leoneifler/exact-SCIP)
 
