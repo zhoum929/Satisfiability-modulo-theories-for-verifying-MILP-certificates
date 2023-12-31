@@ -32,7 +32,7 @@ Next we present an example of how to verify the upper/lower bound of the optimum
 3. We would like to verify the upper/lower bound provided in the **RTP** section of the *vipr* file. Program **find_RTP** can help find this information. Run command `./find_RTP`, type in `flugpl.vipr`. The result shows that `flugpl` is a minimization problem, so we would like to verify the upper bound of its optimum value. As shown in the result, vipr provides an upper bound of $1201500$ for its optimum value.
 4. Run command `./mps_to_smt2`.
 5. Type in `flugpl.mps`, then type in $1201500$. Wait for a while and file `flugpl_mps.smt2` will be generated.
-6. If you want to check the generated file with **cvc5**, the negative numbers must be transformed by running `.\normalize_num` and type in `flugpl_mps.smt2`. This will generate file `flugpl_mps_norm.smt2`.
+6. If you want to check the generated file with **cvc5**, the negative numbers must be transformed by running `./normalize_num` and type in `flugpl_mps.smt2`. This will generate file `flugpl_mps_norm.smt2`.
 7. Run `cvc5 flugpl_mps_norm.smt2`. This should report `sat`, which means the upper bound of the optimum value provided in *vipr* is valid.
 
 Note that in case of a maximization problem, we should verify lower bound of the optimum value instead. Every other step is the same. The lower and uppor bounds provided in vipr may not be the same--there may be a gap between them.
