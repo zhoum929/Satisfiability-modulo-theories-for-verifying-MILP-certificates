@@ -29,6 +29,7 @@ Now we give examples of how to run the tests. First, let's use **VIPR2SMT** to v
 6. Use your preferred solver to check the generated document. If you are using **cvc5**, for instance, you should run command `cvc5 alu10_5_vipr_norm.smt2`. If it reports `sat`, it means the *vipr* certificate is valid; if it reports `unsat`, it means the *vipr* certificate is invalid.
 
 Alternatively, we can use `viprsmtchk` to verify *vipr* certificate of problem `alu10_5`. If we want to specify the blocksize (maximum number of DER constraints in *vipr* certificate that could be encoded in a single **SMT** instance) to be 50, run command `./viprsmtchk alu10_5.vipr Y 50`. If we don't want to specify the block size, run command `./viprsmtchk alu10_5.vipr N`. Then, it will print `alu10_5.vipr is valid` and report the time used.
+
 ---
 
 Next we present an example of how to verify the upper/lower bound of the optimum value through **MPS2SMT** transformation. We take the case `flugpl` for example.
