@@ -36,7 +36,7 @@ Next we present an example of how to verify the upper/lower bound of the optimum
 1. Download `flugpl.mps` from `/experiements/easy/mps` to the main folder.
 2. Download flugpl certificate (*vipr*) file from [vipr-experiements](https://github.com/ambros-gleixner/VIPR/tree/master/experiments) to the main folder. The download file is a zipped file, so please extract the vipr file inside to the main folder and rename it as `flugpl.vipr`.
 3. We would like to verify the upper/lower bound provided in the **RTP** section of the *vipr* file. Program **find_RTP** can help find this information. Run command `./find_RTP flugpl.vipr`. The result shows that `flugpl` is a minimization problem, so we would like to verify the upper bound of its optimum value. As shown in the result, vipr provides an upper bound of $1201500$ for its optimum value.
-4. Run command `./mps_to_smt2 flugpl.mps $1201500$`. Wait for a while and file `flugpl_mps.smt2` will be generated.
+4. Run command `./mps_to_smt2 flugpl.mps 1201500`. Wait for a while and file `flugpl_mps.smt2` will be generated.
 5. If you want to check the generated file with **cvc5**, the negative numbers must be transformed by running `./normalize_num flugpl_mps.smt2`. This will generate file `flugpl_mps_norm.smt2`.
 6. Run `cvc5 flugpl_mps_norm.smt2`. This should report `sat`, which means the upper bound of the optimum value provided in *vipr* is valid.
 
