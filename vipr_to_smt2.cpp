@@ -717,14 +717,14 @@ void input_cons()
     }
     input_RTP();
 }
-int main()
+int main(int argc, char **argv)
 {
 
-    cout << "Please type the filename: " << endl;
-    cin >> filename;
+
+    filename=argv[1];
     int lnth = filename.length();
     filename = filename.substr(0, lnth - 5);
-    cout << endl;
+
     string s1, s2;
     s1 = filename + ".vipr";
     s2 = filename + "_vipr.smt2";
