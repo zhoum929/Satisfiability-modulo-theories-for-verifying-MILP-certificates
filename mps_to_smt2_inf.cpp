@@ -808,13 +808,12 @@ void output_fun()
     fout.close();
     return;
 }
-int main()
+int main(int argc, char **argv)
 {
-    cout << "Please type the filename: " << endl;
-    cin >> filename;
+    
+    filename=argv[1];
     int lnth = filename.length();
     filename = filename.substr(0, lnth - 4);
-    cout << endl;
     string s1, s2;
     s1 = filename + ".mps";
     s2 = filename + "_mps.smt2";
