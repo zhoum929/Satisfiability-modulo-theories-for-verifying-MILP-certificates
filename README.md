@@ -31,7 +31,7 @@ Now we give examples of how to run the tests. First, let's use **VIPR2SMT** to v
 Alternatively, we can use `viprsmtchk` to verify *vipr* certificate of problem `alu10_5`. This program uses cvc5 as the default **SMT** solver. If we want to specify the blocksize (maximum number of DER constraints in *vipr* certificate that could be encoded in a single **SMT** instance) to be 50, run command `./viprsmtchk alu10_5.vipr Y 50`. If we don't want to specify the block size, run command `./viprsmtchk alu10_5.vipr N`. Then, it will print `alu10_5.vipr is valid` and report the time used.
 
 If we want more efficiency, we can run the parallelization of `viprsmtchk` with the following steps:
-1. Change the 7th line of local_runner.sh to the directory where cvc5 is installed; Change the 8th line to the working directory.
+1. Change the 7th line of `local_runner.sh` to the directory where cvc5 is installed; Change the 8th line to the working directory.
 2. Change the 105th line of `remote_execution_manager.cpp` to the working directory; Change line 17-19 to the machines to be used (fill in the hostname and the maximum number of processors in each machine).
 3. Run command `g++ -std=c++11 -o viprsmtchkpal viprsmtchkpal.cpp remote_execution_manager.cpp -lpthread` to complie the program.
 4. If we want to specify the blocksize to be 50, run command `./viprsmtchkpal alu10_5.vipr Y 50`. If we don't want to specify the block size, run command `./viprsmtchkpal alu10_5.vipr N`. Then, it will print `alu10_5.vipr is valid` and report the time used.
