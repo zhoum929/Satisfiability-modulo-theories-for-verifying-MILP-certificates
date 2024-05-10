@@ -10,11 +10,9 @@ using namespace std;
 string filename;
 ifstream fin;
 
-int main()
+int main(int argc, char **argv)
 {
-	string s;
-	cout << "Please type the filename: " << endl;
-	cin >> s;
+	string s=argv[1];
 	fin.open(s);
 	while (true)
 	{
