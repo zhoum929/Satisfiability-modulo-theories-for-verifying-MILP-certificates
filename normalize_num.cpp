@@ -11,10 +11,10 @@ string filename;
 ofstream fout;
 ifstream fin;
 
-int main()
+int main(int argc, char **argv)
 {
-	cout << "Please type the filename: " << endl;
-	cin >> filename;
+
+	filename=argv[1];
 	int lnth = filename.length();
 	filename = filename.substr(0, lnth - 5);
 	cout << endl;
