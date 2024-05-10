@@ -8,7 +8,7 @@ endif
 
 LDFLAGS=
 
-PROGRAMS=find_RTP mps_to_smt2 mps_to_smt2_inf normalize_num vipr_to_smt2
+PROGRAMS=find_RTP mps_to_smt2 mps_to_smt2_inf normalize_num vipr_to_smt2 viprsmtchk
 
 all: $(PROGRAMS)
 
@@ -27,6 +27,8 @@ vipr_to_smt2: vipr_to_smt2.cpp
 mps_to_smt2_inf: mps_to_smt2_inf.cpp
 	$(CXX) $(CXXFLAGS) $(FLAGS) -o $@ $< $(LDFLAGS)
 	
+viprsmtchk: viprsmtchk.cpp
+	$(CXX) $(CXXFLAGS) $(FLAGS) -o $@ $< $(LDFLAGS)
 #%.o: %.c
 #	$(CXX) -c -o $@ -I. $<
 
